@@ -1,0 +1,2 @@
+20:37:08	SELECT user_name,name,website FROM github.java_github_repository_1 where stars>50 LIMIT 0, 10000	1920 row(s) returned	0.018 sec / 1.397 sec
+
