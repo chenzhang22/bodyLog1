@@ -9,7 +9,7 @@ def findRepository(repo)
     repository=nil
     i+=1
     sleep 60
-    retry if i<50
+    retry if i<5
   end
   return repository
 end
