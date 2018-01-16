@@ -56,12 +56,13 @@ end
 def getRepositoryLog(repo)
   parent_dir=File.join('..','build_logs',repo.gsub(/\//,'@'))
   #return if File.exist?(@parent_dir)
-  FileUtils.mkdir_p(parent_dir) unless File.exist?(parent_dir)
+  
   repository=findRepository(repo)
   return unless repository
   lastBuildNumber=getLastBuildNumber(repository)
   return unless lastBuildNumber
   return if lastBuildNumber.to_i<1000
+  FileUtils.mkdir_p(parent_dir) unless File.exist?(parent_dir)
   for i in 1..lastBuildNumber.to_i
     build=getBuild(repository,i)
     next unless build
